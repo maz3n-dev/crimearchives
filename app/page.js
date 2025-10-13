@@ -190,7 +190,7 @@ The store was demolished as scheduled. The final report noted: "The phenomena we
       if (!audioRef.current.ctx) {
         const ctx = new (window.AudioContext || window.webkitAudioContext)()
         const master = ctx.createGain()
-        master.gain.value = 0.5 // even lower volume for softer sound
+        master.gain.value = 1.0 // even lower volume for softer sound
         master.connect(ctx.destination)
         audioRef.current.ctx = ctx
         audioRef.current.masterGain = master
