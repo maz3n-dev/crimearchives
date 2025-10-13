@@ -207,7 +207,7 @@ The store was demolished as scheduled. The final report noted: "The phenomena we
       osc1.type = 'sine'
       osc1.frequency.value = 500 // lower frequency for softer sound
       const osc1Gain = ctx.createGain()
-      osc1Gain.gain.value = 0.001
+      osc1Gain.gain.value = 0.003
       
       // Gentle noise layer for mechanical texture
       const noiseBuffer = ctx.createBuffer(1, 0.02 * ctx.sampleRate, ctx.sampleRate)
@@ -218,7 +218,7 @@ The store was demolished as scheduled. The final report noted: "The phenomena we
       const noise = ctx.createBufferSource()
       noise.buffer = noiseBuffer
       const noiseGain = ctx.createGain()
-      noiseGain.gain.value = 0.008
+      noiseGain.gain.value = 0.016
       const noiseFilter = ctx.createBiquadFilter()
       noiseFilter.type = 'lowpass'
       noiseFilter.frequency.value = 800
