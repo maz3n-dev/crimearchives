@@ -117,9 +117,13 @@ export default function Page() {
   const [isNavVisible, setIsNavVisible] = useState(true)
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
+  const [isMuted, setIsMuted] = useState(false)
+  const [isHeaderMinimized, setIsHeaderMinimized] = useState(false)
+  const [showFullText, setShowFullText] = useState(false)
 
   const typingRef = useRef({ running: false, timeoutIds: [] })
   const audioRef = useRef({ ctx: null, masterGain: null })
+  const modalContentRef = useRef(null)
 
   // Minimum swipe distance to trigger nav hide/show
   const minSwipeDistance = 50
@@ -156,11 +160,12 @@ export default function Page() {
   }, [])
 
   const playTypewriterSound = () => {
+    if (isMuted) return
     try {
       if (!audioRef.current.ctx) {
         const ctx = new (window.AudioContext || window.webkitAudioContext)()
         const master = ctx.createGain()
-        master.gain.value = 1.5
+        master.gain.value = 0.6
         master.connect(ctx.destination)
         audioRef.current.ctx = ctx
         audioRef.current.masterGain = master
@@ -169,15 +174,17 @@ export default function Page() {
       const now = ctx.currentTime
       const osc = ctx.createOscillator()
       const gain = ctx.createGain()
-      osc.type = 'square'
-      osc.frequency.value = 1200
+      
+      osc.type = 'sine'
+      osc.frequency.value = 300
       gain.gain.setValueAtTime(0, now)
-      gain.gain.linearRampToValueAtTime(0.03, now + 0.001)
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1)
+      gain.gain.linearRampToValueAtTime(0.015, now + 0.001)
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.03)
+      
       osc.connect(gain)
       gain.connect(audioRef.current.masterGain)
       osc.start(now)
-      osc.stop(now + 0.1)
+      osc.stop(now + 0.03)
     } catch (e) {}
   }
 
@@ -194,32 +201,52 @@ export default function Page() {
     let fullText = ''
     const timeouts = []
     const chars = content.split('')
+    
+    // Auto-minimize header when typing starts
+    setIsHeaderMinimized(true)
+    
     chars.forEach((char, idx) => {
       const timeout = setTimeout(() => {
         fullText += char
         setTypedText(fullText)
-        if (char.trim() !== '' && Math.random() > 0.3) playTypewriterSound()
+        if (char.trim() !== '' && Math.random() > 0.05) playTypewriterSound()
         if (idx === chars.length - 1) typingRef.current.running = false
-      }, idx * 40)
+      }, idx * 65)
       timeouts.push(timeout)
     })
     typingRef.current.timeoutIds = timeouts
   }
 
+  const showFullCase = () => {
+    stopTyping()
+    setShowFullText(true)
+    setTypedText(selected.content)
+    setIsHeaderMinimized(true)
+  }
+
   const openStory = (story) => {
     setSelected(story)
     setTypedText('')
+    setShowFullText(false)
+    setIsHeaderMinimized(false)
     setTimeout(() => startTyping(story.content), 200)
   }
 
   const closeModal = () => {
     stopTyping()
     setSelected(null)
+    setShowFullText(false)
+    setIsHeaderMinimized(false)
   }
 
   const showNotification = (message) => {
     setNotification({ message, id: Date.now() })
     setTimeout(() => setNotification(null), 3000)
+  }
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted)
+    showNotification(isMuted ? '🔊 Sound enabled' : '🔇 Sound muted')
   }
 
   const allTags = [...new Set(STORIES.flatMap(story => story.tags))]
@@ -239,6 +266,8 @@ export default function Page() {
         const next = STORIES[(curIdx + 1) % STORIES.length]
         setSelected(next)
         setTypedText('')
+        setShowFullText(false)
+        setIsHeaderMinimized(false)
         setTimeout(() => startTyping(next.content), 120)
       }
       if (e.key === 'ArrowLeft') {
@@ -246,6 +275,8 @@ export default function Page() {
         const prev = STORIES[(curIdx - 1 + STORIES.length) % STORIES.length]
         setSelected(prev)
         setTypedText('')
+        setShowFullText(false)
+        setIsHeaderMinimized(false)
         setTimeout(() => startTyping(prev.content), 120)
       }
     }
@@ -450,6 +481,17 @@ export default function Page() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
                 >
+                  {/* Mute/Unmute Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={toggleMute}
+                    className="w-10 h-10 rounded-lg bg-gray-900/50 flex items-center justify-center text-lg hover:bg-gray-800/50 transition-colors"
+                    title={isMuted ? "Unmute sound" : "Mute sound"}
+                  >
+                    {isMuted ? "🔇" : "🔊"}
+                  </motion.button>
+                  
                   <div className="flex view-toggle rounded-lg p-1 bg-gray-900/50">
                     {['grid','list'].map((mode)=>(<button key={mode} onClick={()=>setViewMode(mode)} className={`px-3 py-1 rounded-md text-sm capitalize transition-all ${viewMode===mode?'bg-amber-900/30 text-amber-400':''}`}>{mode}</button>))}
                   </div>
@@ -529,10 +571,32 @@ export default function Page() {
             {selected&&(<motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 z-50 flex items-center justify-center px-6 py-8" onClick={closeModal}>
               <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="absolute inset-0 bg-black/90 backdrop-blur-md"/>
               <motion.div initial={{scale:0.95,y:20,opacity:0}} animate={{scale:1,y:0,opacity:1}} exit={{scale:0.95,y:20,opacity:0}} transition={{type:"spring",damping:25,stiffness:300}} className="modal relative max-w-6xl w-full rounded-3xl overflow-hidden" onClick={(e)=>e.stopPropagation()}>
-                <div className="h-96 overflow-hidden relative">
-                  <img src={selected.image} alt={selected.title} className="w-full h-full object-cover filter sepia(0.3) brightness(0.6)"/>
+                <motion.div 
+                  className={`overflow-hidden relative transition-all duration-500 ease-in-out ${
+                    isHeaderMinimized ? 'h-32' : 'h-96'
+                  }`}
+                  initial={false}
+                  animate={{ height: isHeaderMinimized ? 128 : 384 }}
+                >
+                  <img 
+                    src={selected.image} 
+                    alt={selected.title} 
+                    className="w-full h-full object-cover filter sepia(0.3) brightness(0.6) transition-all duration-500"
+                    style={{ 
+                      objectPosition: isHeaderMinimized ? 'center 30%' : 'center center'
+                    }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"/>
-                  <div className="absolute bottom-8 left-8 right-8">
+                  <motion.div 
+                    className="absolute bottom-8 left-8 right-8"
+                    initial={false}
+                    animate={{ 
+                      bottom: isHeaderMinimized ? 4 : 32,
+                      scale: isHeaderMinimized ? 0.8 : 1,
+                      transformOrigin: 'left bottom'
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <div className="flex items-center gap-4 mb-3">
                       <div className="category-tag">{selected.category}</div>
                       <div className={`status-badge status-${selected.status.toLowerCase()}`}>{selected.status}</div>
@@ -544,9 +608,12 @@ export default function Page() {
                       <div className="text-amber-200/60">•</div>
                       <div className="text-lg text-amber-200/80">{selected.witnesses} witnesses</div>
                     </div>
-                  </div>
-                </div>
-                <div className="p-10 modal-content">
+                  </motion.div>
+                </motion.div>
+                <div 
+                  ref={modalContentRef}
+                  className="p-10 modal-content"
+                >
                   <div className="mb-8 p-6 bg-gray-900/50 rounded-xl border border-gray-800">
                     <h4 className="font-['Crimson_Text'] font-semibold text-lg mb-3 text-amber-200">Case Evidence</h4>
                     <div className="flex flex-wrap gap-3">
@@ -561,8 +628,19 @@ export default function Page() {
                   <div className="mt-12 flex items-center justify-between pt-8 border-t border-gray-800">
                     <div className="text-sm text-gray-500 font-mono">CLASSIFIED • CASE #{('00'+selected.id).slice(-2)}</div>
                     <div className="flex items-center gap-6">
-                      <motion.button whileHover={{scale:1.05,x:-2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const prev=STORIES[(curIdx-1+STORIES.length)%STORIES.length];setSelected(prev);setTypedText('');setTimeout(()=>startTyping(prev.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">← Previous Case</motion.button>
-                      <motion.button whileHover={{scale:1.05,x:2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const next=STORIES[(curIdx+1)%STORIES.length];setSelected(next);setTypedText('');setTimeout(()=>startTyping(next.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">Next Case →</motion.button>
+                      {/* Show Full Case Button - Only show when typing is in progress and full text isn't shown */}
+                      {!showFullText && typingRef.current.running && (
+                        <motion.button 
+                          whileHover={{scale:1.05,x:-2}} 
+                          whileTap={{scale:0.95}} 
+                          onClick={showFullCase}
+                          className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30"
+                        >
+                          📄 Show Full Case
+                        </motion.button>
+                      )}
+                      <motion.button whileHover={{scale:1.05,x:-2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const prev=STORIES[(curIdx-1+STORIES.length)%STORIES.length];setSelected(prev);setTypedText('');setShowFullText(false);setIsHeaderMinimized(false);setTimeout(()=>startTyping(prev.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">← Previous Case</motion.button>
+                      <motion.button whileHover={{scale:1.05,x:2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const next=STORIES[(curIdx+1)%STORIES.length];setSelected(next);setTypedText('');setShowFullText(false);setIsHeaderMinimized(false);setTimeout(()=>startTyping(next.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">Next Case →</motion.button>
                       <motion.button whileHover={{scale:1.05}} whileTap={{scale:0.95}} onClick={closeModal} className="text-gray-400 hover:text-gray-200 transition font-medium px-6 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700">Close Dossier</motion.button>
                     </div>
                   </div>
