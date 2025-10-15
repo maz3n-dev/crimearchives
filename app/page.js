@@ -165,7 +165,7 @@ export default function Page() {
       if (!audioRef.current.ctx) {
         const ctx = new (window.AudioContext || window.webkitAudioContext)()
         const master = ctx.createGain()
-        master.gain.value = 0.6
+        master.gain.value = 2.0
         master.connect(ctx.destination)
         audioRef.current.ctx = ctx
         audioRef.current.masterGain = master
