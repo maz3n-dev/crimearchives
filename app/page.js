@@ -75,11 +75,11 @@ export default function Page() {
       evidence: ['Radio Recordings', 'Signal Analysis'], tags: ['Media', 'Paranormal'], witnesses: 9, severity: 8
     },
     {
-      id: 11, title: 'Case 11: The Urban Legends', date: 'Filed Nov 17, 2025', category: 'Folklore Manifestation', status: 'Active', priority: 'Medium',
-      summary: 'Local urban legends begin physically manifesting in the city.',
-      content: `It started with the "Shadow Man" sightings in the industrial district. Then the "Weeping Woman" appeared near the river. When physical evidence confirmed these manifestations were real, investigators discovered a terrifying pattern: the creatures were exactly matching local urban legends, down to specific details that varied between neighborhood versions of the stories. The manifestations are becoming more solid and lasting longer with each appearance. The "Hook-Handed Lover" legend manifested with a prosthetic hook that matched a cold case from 1972. The "Vanishing Hitchhiker" appears on specific roads exactly as described in local folklore. Research has revealed that areas with stronger collective belief in these legends show more pronounced manifestations. The creatures seem to be "feeding" on attention and fear, growing more substantial with each sighting. The most dangerous development is the emergence of new legends created intentionally through online forums and social media campaigns. A group of college students as an experiment created a detailed legend about a "Library Shusher" - a ghost that violently silences noisy students. Within two weeks, multiple students reported encounters matching the description exactly, complete with physical injuries. The manifestations appear to be learning and adapting - the "Shadow Man" has started appearing in security camera footage, something it couldn't do initially. The "Weeping Woman" has been captured speaking phrases in languages that didn't exist when her legend originated. The current theory suggests these are tulpa-like entities formed from collective belief, but their increasing autonomy and intelligence suggest they're developing beyond their original conceptual boundaries. The most frightening aspect is that some legends are beginning to manifest simultaneously in multiple cities, suggesting the phenomenon is spreading through our interconnected belief systems.`,
-      image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80',
-      evidence: ['Photographic Evidence', 'Witness Testimonies'], tags: ['Folklore', 'Urban Legend'], witnesses: 23, severity: 7
+      id: 11, title: 'Case 11: The Black Dahlia', date: 'Filed Jan 15, 1947', category: 'Historical Murder', status: 'Unsolved', priority: 'Critical',
+      summary: 'The gruesome murder of Elizabeth Short that became one of America\'s most infamous unsolved cases.',
+      content: `On January 15, 1947, the body of 22-year-old Elizabeth Short was found severed at the waist and completely drained of blood in a vacant lot in Los Angeles. The press dubbed her "The Black Dahlia" due to her rumored preference for black clothing and the 1946 film "The Blue Dahlia." Her body had been meticulously cleaned, and the killer had carved a "Glasgow smile" from the corners of her mouth to her ears. The autopsy revealed she had been tortured for several days before her death, with numerous cuts and cigarette burns covering her body. The killer had drained her blood and removed her internal organs with surgical precision. The case became a media sensation, with the Los Angeles Examiner receiving a package containing Short's birth certificate, photographs, and an address book with the name "Mark Hansen" circled. Hundreds of confessions poured in, but all were proven false. The investigation uncovered Short's troubled life - she had moved to California hoping to reunite with a former boyfriend, but found herself drifting between temporary homes and relationships. She was last seen alive on January 9, 1947, getting out of a car near the Biltmore Hotel. The prime suspect, Dr. George Hodel, was a prominent physician with surgical training who lived near the crime scene. His own son, a former LAPD detective, would later claim his father was the killer, pointing to suspicious photographs and recordings found in Hodel's possession. Other suspects included a Cleveland salesman who knew Short, and a man who confessed on his deathbed but provided no verifiable evidence. The case remains officially unsolved, though many theories persist. The killer's surgical skill, the lack of blood at the crime scene, and the deliberate posing of the body suggest the murderer had medical training and was making a deliberate statement. The Black Dahlia murder has inspired countless books, films, and theories, but the truth died with Elizabeth Short on that January morning in 1947. The case file remains open in the hope that new evidence or DNA technology might one day provide answers.`,
+      image: 'https://i.etsystatic.com/17597297/r/il/4813e7/1599204151/il_fullxfull.1599204151_nf6x.jpg',
+      evidence: ['Autopsy Reports', 'Crime Scene Photos', 'Letters to Press'], tags: ['Historical', 'Murder', 'Unsolved'], witnesses: 0, severity: 10
     },
     {
       id: 12, title: 'Case 12: The Chronometric Conspiracy', date: 'Filed Dec 31, 2025', category: 'Temporal Weapon', status: 'Closed', priority: 'Low',
@@ -96,32 +96,11 @@ export default function Page() {
       evidence: ['MRI Scans', 'Memory Tests'], tags: ['Neurological', 'Psychological'], witnesses: 11, severity: 8
     },
     {
-      id: 14, title: 'Case 14: The Rainmaker\'s Curse', date: 'Filed Feb 8, 2026', category: 'Meteorological Mystery', status: 'Unsolved', priority: 'Critical',
-      summary: 'A small town experiences weather patterns that match the emotions of its residents.',
-      content: `In the isolated town of Serenity Falls, storms rage when arguments break out. Sunshine appears during moments of joy. When a climatologist discovered the correlation was 100% accurate, she realized the town was experiencing a collective psychometric phenomenon. The weather doesn't just reflect emotions - it amplifies them. A minor disagreement between neighbors can trigger tornadoes. Collective grief has caused rainfall that floods the valley. The town was founded on a geological anomaly that somehow translates emotional energy into meteorological events. The effect is intensifying as residents become more aware of it, creating feedback loops where fear of bad weather causes the very storms they dread. The most dangerous discovery came when researchers attempted to evacuate the town - the weather patterns followed evacuees, suggesting the phenomenon is tied to the people rather than the location. One family moved to Arizona only to find themselves surrounded by localized rainstorms whenever they argued. The town has become a living laboratory for emotional regulation, with residents practicing meditation and conflict resolution not for spiritual reasons but for survival. The phenomenon has begun producing weather patterns that don't exist naturally - rainbow-colored snow, perfumed rain, lightning that strikes in perfect geometric patterns. These exotic meteorological events appear to correspond to emotional states that don't have names in any language - complex blends of feeling that researchers are struggling to categorize. The unsolved mystery is what happens when the entire town experiences a unified emotional state. The closest they've come was during a community memorial service that created a perfect, stationary rainbow that lasted for exactly 24 hours and emitted measurable energy signatures. Some researchers believe the town is evolving toward a collective consciousness that will eventually manifest as a permanent weather pattern of unimaginable power.`,
-      image: 'https://images.unsplash.com/photo-1470432581262-e7880e8fe79a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMHJhaW58ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000',
-      evidence: ['Weather Data', 'Psychological Profiles'], tags: ['Meteorological', 'Emotional'], witnesses: 45, severity: 9
-    },
-    {
-      id: 15, title: 'Case 15: The Glass Sentinel', date: 'Filed Mar 3, 2026', category: 'Architectural Anomaly', status: 'Active', priority: 'Medium',
-      summary: 'Windows in an old asylum reflect events from different time periods.',
-      content: `The abandoned Blackwood Asylum was scheduled for demolition when urban explorers reported something impossible: the windows showed scenes from the asylum's active years. Security footage confirmed the phenomenon - the glass wasn't reflecting the present but acting as windows into specific moments between 1928 and 1954, the years the asylum operated at its cruelest. Each window shows a different date and time, with the scenes progressing in real-time relative to their temporal location. One window shows a patient being admitted on June 3, 1932, while another shows the same patient's therapy session six months later. The windows aren't passive viewers - they somehow interact across time. Researchers have communicated with figures in the windows using light signals, and the figures have responded in ways that suggest they perceive the researchers as ghosts or hallucinations. The most significant breakthrough came when a researcher realized the windows were showing pivotal moments that determined patients' fates, and that by intervening with light and sound, they could alter the outcomes. One patient who originally died in 1934 was guided toward a different treatment path and now appears in later windows as recovered and discharged. But each intervention creates temporal paradoxes - the asylum's records now contain conflicting information, with some documents showing the original timeline and others showing the altered one. The windows themselves are changing, developing cracks that correspond to temporal stress points. The current theory suggests the asylum's suffering created a "temporal scar" that fused multiple timelines together in the building's physical structure. The case remains active because the windows have started showing events from the future - including scenes of the research team's own activities, but with subtle differences that suggest multiple possible outcomes. One window shows the asylum still standing in 2030, another shows it demolished, and a third shows something entirely different growing through the ruins.`,
-      image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80',
-      evidence: ['Video Evidence', 'Historical Research'], tags: ['Architectural', 'Temporal'], witnesses: 8, severity: 7
-    },
-    {
-      id: 16, title: 'Case 16: The Silent Choir', date: 'Filed Apr 18, 2026', category: 'Musical Phenomenon', status: 'Closed', priority: 'Low',
-      summary: 'A silent piece of music causes listeners to experience shared hallucinations.',
-      content: `Composer Alex Chen's "Silent Symphony" was meant to be performed without instruments. But when audience members began experiencing identical vivid hallucinations during the performance, researchers discovered the piece used subsonic frequencies and binaural beats to synchronize listeners' brainwaves. The shared hallucinations weren't random - they were detailed recreations of historical events that none of the audience members could have known about in such detail. A performance in New York caused the entire audience to simultaneously experience the 1977 blackout from multiple perspectives. A London performance recreated the exact moment of a royal coronation from the viewpoint of various attendees. The piece works by accessing what Jung called the "collective unconscious" - a shared repository of human experience - and projecting it directly into listeners' minds. The hallucinations are so vivid that participants emerge with new skills and knowledge - audience members who experienced the blackout from an engineer's perspective gained temporary electrical engineering expertise, while those who experienced the coronation could speak with authentic period accents. The piece was banned after a performance caused audience members to experience a future event - a detailed vision of a political assassination that hasn't occurred yet. The vision was so traumatic that several attendees required psychiatric care. Analysis of the composition revealed it uses mathematical ratios that correspond to neural synchronization patterns, essentially turning the audience's collective brain into a biological receiver for historical and potential future events. The case was closed when Chen disappeared, leaving behind notes suggesting he hadn't composed the piece but rather "transcribed" it from something he heard in dreams. The final page of his notes contains a warning: "The music isn't the composition - the silence between the notes is the composition. And the silence is learning to listen back."`,
-      image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&q=80',
-      evidence: ['Audience Recordings', 'Psychological Evaluations'], tags: ['Musical', 'Psychological'], witnesses: 32, severity: 6
-    },
-    {
-      id: 17, title: 'Case 17: The Black Dahlia', date: 'Filed Jan 15, 1947', category: 'Historical Murder', status: 'Unsolved', priority: 'Critical',
-      summary: 'The gruesome murder of Elizabeth Short that became one of America\'s most infamous unsolved cases.',
-      content: `On January 15, 1947, the body of 22-year-old Elizabeth Short was found severed at the waist and completely drained of blood in a vacant lot in Los Angeles. The press dubbed her "The Black Dahlia" due to her rumored preference for black clothing and the 1946 film "The Blue Dahlia." Her body had been meticulously cleaned, and the killer had carved a "Glasgow smile" from the corners of her mouth to her ears. The autopsy revealed she had been tortured for several days before her death, with numerous cuts and cigarette burns covering her body. The killer had drained her blood and removed her internal organs with surgical precision. The case became a media sensation, with the Los Angeles Examiner receiving a package containing Short's birth certificate, photographs, and an address book with the name "Mark Hansen" circled. Hundreds of confessions poured in, but all were proven false. The investigation uncovered Short's troubled life - she had moved to California hoping to reunite with a former boyfriend, but found herself drifting between temporary homes and relationships. She was last seen alive on January 9, 1947, getting out of a car near the Biltmore Hotel. The prime suspect, Dr. George Hodel, was a prominent physician with surgical training who lived near the crime scene. His own son, a former LAPD detective, would later claim his father was the killer, pointing to suspicious photographs and recordings found in Hodel's possession. Other suspects included a Cleveland salesman who knew Short, and a man who confessed on his deathbed but provided no verifiable evidence. The case remains officially unsolved, though many theories persist. The killer's surgical skill, the lack of blood at the crime scene, and the deliberate posing of the body suggest the murderer had medical training and was making a deliberate statement. The Black Dahlia murder has inspired countless books, films, and theories, but the truth died with Elizabeth Short on that January morning in 1947. The case file remains open in the hope that new evidence or DNA technology might one day provide answers.`,
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80',
-      evidence: ['Autopsy Reports', 'Crime Scene Photos', 'Letters to Press'], tags: ['Historical', 'Murder', 'Unsolved'], witnesses: 0, severity: 10
+      id: 14, title: 'Case 14: The Dalmasso Conspiracy', date: 'Filed Nov 15, 2006', category: 'Historical Murder', status: 'Unsolved', priority: 'Critical',
+      summary: 'The brutal murder of Nora Dalmasso in Argentina reveals a web of power, strategy, and calculated deception.',
+      content: `In November 2006, the tranquil city of Río Cuarto, Argentina, was shattered by the brutal murder of Nora Dalmasso. Nearly two decades later, the case remains legally unresolved. Though new forensic evidence has pointed toward a contractor named Roberto Bárzola, many believe the real story lies deeper. This theory explores the idea that Nora's husband, Marcelo Macarrón, orchestrated her murder not out of passion, but out of strategy, self-preservation, and calculated detachment. A Marriage of Convenience, Not Love From the outside, Nora and Marcelo appeared as a successful, upper-middle-class couple. But beneath the surface, their relationship seemed more aligned with power and image than affection. The emotional distance between them, documented in press interviews and testimonies, suggests that their bond was strained. Marcelo's behavior following Nora's death only deepened suspicions. He appeared cold, mechanical, more concerned with public image than grief. While his wife had been strangled in her home, Marcelo was attending a golf tournament in Punta del Este, Uruguay — a trip critics saw as suspiciously convenient. Upon his return, his actions lacked the urgency or devastation expected of a grieving husband. This, many argue, was the first red flag. The Performance of a Father Shortly after the murder, Marcelo ensured that he was always accompanied by his children, especially his son Facundo. This move painted him as a supportive father figure, attempting to hold the family together during tragedy. In truth, it may have been a deliberate strategy to shield himself from suspicion. By surrounding himself with his children, Marcelo built an emotional firewall. It made him appear dependable, grief-stricken, and unlikely to commit such a crime. But it also used Facundo as a human alibi. Ironically, Facundo himself was later investigated, revealing how even family could be drawn into the web of suspicion. A Killer by Proxy This theory hinges on one vital belief: that Marcelo did not kill Nora with his own hands. He is too intelligent, too cautious. A man who knows he will be a suspect would never risk physical involvement. Instead, he might have enlisted someone else — someone disposable, someone forgettable. Enter Roberto Bárzola. A floor polisher who had worked in the Dalmasso home days before the murder, Bárzola had access, anonymity, and no clear connection to the family. His DNA has now been found on the robe belt used to strangle Nora, and even on her body. This discovery was made by forensic analysts from Argentina in cooperation with the University of Florida. The fact that this DNA evidence only surfaced nearly 20 years later is itself suspicious. Was it overlooked? Suppressed? Or planted? Bárzola may not be the mastermind, but the tool. He either carried out the act under instruction or was set up to take the fall once the dust settled. Controlling the Narrative Marcelo Macarrón had connections — to politics, to medicine, to the media. He understood that the court of public opinion mattered as much as the actual courtroom. By shaping his image as a calm, rational father, he positioned himself beyond suspicion. The longer the case dragged on, the more the public lost interest. In 2025, the case shifted into a "truth trial" format — not to prosecute Bárzola, but to reconstruct the events in the absence of a formal criminal sentence. This model benefits those who want closure without risk: a historical conclusion without judicial consequence. What if Nora Dalmasso's death wasn't a spontaneous crime or an act of passion, but a calculated removal? What if her husband, cool and composed, orchestrated her death without leaving fingerprints? What if the killer got away not because the system failed, but because it worked exactly as he anticipated? This theory doesn't claim to know the truth. But it insists that the current narrative is incomplete. Until every piece of this puzzle is placed under equal scrutiny — including Marcelo Macarrón's actions and the late discovery of Bárzola's DNA — justice for Nora remains unfinished.`,
+      image: 'https://zh-hant.martincid.com/wp-content/uploads/2025/06/The-Many-Deaths-of-Nora-Dalmasso-1024x576.jpg',
+      evidence: ['DNA Analysis', 'Forensic Reports', 'Witness Testimonies'], tags: ['Historical', 'Murder', 'Conspiracy'], witnesses: 12, severity: 10
     }
   ]
 
@@ -134,13 +113,17 @@ export default function Page() {
   const [selectedTags, setSelectedTags] = useState(new Set())
   const [notification, setNotification] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [showIntro, setShowIntro] = useState(true)
 
   const typingRef = useRef({ running: false, timeoutIds: [] })
   const audioRef = useRef({ ctx: null, masterGain: null })
 
   useEffect(() => {
     setIsClient(true)
-    const timer = setTimeout(() => setIsLoading(false), 1500)
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+      setTimeout(() => setShowIntro(false), 4000) // Show intro for 4 seconds after loading
+    }, 1500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -242,6 +225,86 @@ export default function Page() {
     return () => window.removeEventListener('keydown', onKey)
   }, [selected])
 
+  const IntroAnimation = () => (
+  <motion.div 
+    className="fixed inset-0 z-40 flex items-center justify-center bg-black"
+    initial={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 1.5 }}
+  >
+    <div className="text-center">
+      {/* REMOVED THE LOGO SECTION COMPLETELY */}
+      
+      <motion.h1
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}  // Reduced delay from 1 to 0.5
+        className="text-6xl font-bold mb-4 font-['Playfair_Display'] text-amber-400"
+      >
+        CRIME ARCHIVES
+      </motion.h1>
+      
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: 300 }}
+        transition={{ delay: 1.3, duration: 1.5 }}  // Reduced delay from 1.8 to 1.3
+        className="h-1 bg-gradient-to-r from-transparent via-amber-600 to-transparent mx-auto mb-6 rounded-full"
+      />
+      
+      <motion.p
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.7, duration: 1 }}  // Reduced delay from 2.2 to 1.7
+        className="text-xl text-amber-200 font-light tracking-widest mb-2"
+      >
+        CLASSIFIED DOSSIERS
+      </motion.p>
+      
+      <motion.p
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 2.0, duration: 1 }}  // Reduced delay from 2.5 to 2.0
+        className="text-lg text-amber-300/70 font-mono"
+      >
+        ULTIMATE EDITION
+      </motion.p>
+
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 2.7, type: "spring" }}  // Reduced delay from 3.2 to 2.7
+        className="mt-12"
+      >
+        <div className="flex items-center justify-center space-x-2">
+          <motion.div
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-2 h-2 bg-amber-400 rounded-full"
+          />
+          <motion.div
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
+            className="w-2 h-2 bg-amber-400 rounded-full"
+          />
+          <motion.div
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
+            className="w-2 h-2 bg-amber-400 rounded-full"
+          />
+        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 3.0 }}  // Reduced delay from 3.5 to 3.0
+          className="text-amber-500 text-sm mt-2 font-mono"
+        >
+          ACCESSING SECURED FILES...
+        </motion.p>
+      </motion.div>
+    </div>
+  </motion.div>
+)
+
   const styles = `
     :root{--bg-0:#050505;--bg-1:#0a0a0a;--bg-2:#111111;--paper:rgba(255,255,255,0.015);--accent:#8b4513;--accent-glow:rgba(139,69,19,0.15);--accent-secondary:#2f4f4f;--muted:#8a8a8a;--text-primary:#e8e8e8;--text-secondary:#b0b0b0;--border:rgba(255,255,255,0.03);--border-glow:rgba(139,69,19,0.1);--shadow-premium:0 25px 50px -12px rgba(0,0,0,0.5);--shadow-accent:0 0 30px rgba(139,69,19,0.2);}
     *{box-sizing:border-box;}
@@ -292,7 +355,7 @@ export default function Page() {
     <motion.div className="loading-screen" initial={{opacity:1}} animate={{opacity:isLoading?1:0}} style={{display:isLoading?'flex':'none'}}>
       <div className="text-center">
         <motion.div initial={{scale:0.8,opacity:0}} animate={{scale:1,opacity:1}} transition={{delay:0.2}} className="text-amber-400 text-xl font-mono">
-          THE CRIME ARCHIVES
+          INITIALIZING ARCHIVES
         </motion.div>
         <motion.div initial={{width:0}} animate={{width:200}} transition={{delay:0.5,duration:1}} className="h-1 bg-gradient-to-r from-transparent via-amber-800 to-transparent mt-4 mx-auto rounded-full"/>
       </div>
@@ -303,128 +366,176 @@ export default function Page() {
     <>
       <style dangerouslySetInnerHTML={{__html:styles}}/>
       <LoadingScreen/>
-      <div className="crime-body relative min-h-screen">
-        <div className="grain fixed inset-0 pointer-events-none z-2"/>
-        <div className="vignette fixed inset-0 pointer-events-none z-1"/>
-        
-        <header className="sticky-head">
-          <div className="max-w-8xl mx-auto px-6 py-4">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-5">
-                <motion.div className="w-16 h-16 rounded-xl bg-black/40 border border-gray-800 flex items-center justify-center" whileHover={{scale:1.05,rotate:5}} transition={{type:"spring",stiffness:300}}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M3 5h18M5 5v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 3L9 7" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round"/><path d="M15 3L15 7" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round"/></svg>
+      
+      <AnimatePresence>
+        {showIntro && <IntroAnimation />}
+      </AnimatePresence>
+
+      {!showIntro && (
+        <div className="crime-body relative min-h-screen">
+          <div className="grain fixed inset-0 pointer-events-none z-2"/>
+          <div className="vignette fixed inset-0 pointer-events-none z-1"/>
+          
+          <header className="sticky-head">
+            <div className="max-w-8xl mx-auto px-6 py-4">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-5">
+                  <motion.div 
+                    className="w-16 h-16 rounded-xl bg-black/40 border border-gray-800 flex items-center justify-center"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, type: "spring" }}
+                  >
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M3 5h18M5 5v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 3L9 7" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round"/><path d="M15 3L15 7" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <h1 className="text-2xl dossier-title">THE CRIME ARCHIVES</h1>
+                    <p className="text-xs text-gray-500 mt-1 font-mono">CLASSIFIED • ULTIMATE EDITION</p>
+                  </motion.div>
+                </div>
+                <motion.div 
+                  className="flex items-center gap-4"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <div className="flex view-toggle rounded-lg p-1 bg-gray-900/50">
+                    {['grid','list'].map((mode)=>(<button key={mode} onClick={()=>setViewMode(mode)} className={`px-3 py-1 rounded-md text-sm capitalize transition-all ${viewMode===mode?'bg-amber-900/30 text-amber-400':''}`}>{mode}</button>))}
+                  </div>
                 </motion.div>
-                <div><h1 className="text-2xl dossier-title">THE CRIME ARCHIVES</h1><p className="text-xs text-gray-500 mt-1 font-mono">CLASSIFIED • ULTIMATE EDITION</p></div>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="flex view-toggle rounded-lg p-1 bg-gray-900/50">
-                  {['grid','list'].map((mode)=>(<button key={mode} onClick={()=>setViewMode(mode)} className={`px-3 py-1 rounded-md text-sm capitalize transition-all ${viewMode===mode?'bg-amber-900/30 text-amber-400':''}`}>{mode}</button>))}
+              <motion.div 
+                className="flex flex-wrap gap-4 items-center justify-between"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <div className="flex flex-wrap gap-3">
+                  {['all','active','unsolved','closed'].map((filter)=>(<button key={filter} onClick={()=>setActiveFilter(filter)} className={`filter-btn px-4 py-2 rounded-lg text-sm capitalize ${activeFilter===filter?'active':''}`}>{filter}</button>))}
                 </div>
-              </div>
+                <div className="search-box rounded-lg px-4 py-2 min-w-80"><input type="text" placeholder="Search cases..." value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} className="bg-transparent border-none outline-none w-full text-white placeholder-gray-500"/></div>
+              </motion.div>
+              <motion.div 
+                className="flex flex-wrap gap-2 mt-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+              >
+                {allTags.map((tag)=>(<button key={tag} onClick={()=>{const newTags=new Set(selectedTags);if(newTags.has(tag))newTags.delete(tag);else newTags.add(tag);setSelectedTags(newTags);}} className={`tag-filter px-3 py-1 rounded-full text-xs ${selectedTags.has(tag)?'active':''}`}>{tag}</button>))}
+              </motion.div>
             </div>
-            <div className="flex flex-wrap gap-4 items-center justify-between">
-              <div className="flex flex-wrap gap-3">
-                {['all','active','unsolved','closed'].map((filter)=>(<button key={filter} onClick={()=>setActiveFilter(filter)} className={`filter-btn px-4 py-2 rounded-lg text-sm capitalize ${activeFilter===filter?'active':''}`}>{filter}</button>))}
-              </div>
-              <div className="search-box rounded-lg px-4 py-2 min-w-80"><input type="text" placeholder="Search cases..." value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} className="bg-transparent border-none outline-none w-full text-white placeholder-gray-500"/></div>
+          </header>
+
+          <main className="max-w-8xl mx-auto px-6 pb-32 relative z-10">
+            <motion.section 
+              className={`${viewMode==='grid'?'grid xl:grid-cols-3 md:grid-cols-2 gap-8':'flex flex-col gap-6'}`} 
+              initial={{opacity:0}} 
+              animate={{opacity:1}} 
+              transition={{duration:0.8,delay:1}}
+            >
+              {filteredStories.map((s,idx)=>(
+                <motion.article 
+                  key={s.id} 
+                  layout 
+                  initial={{opacity:0,y:40}} 
+                  animate={{opacity:1,y:0}} 
+                  transition={{delay:1 + idx*0.1,type:'spring',stiffness:80,damping:12}} 
+                  whileHover={{y:viewMode==='grid'?-8:-4}} 
+                  onClick={()=>openStory(s)} 
+                  className={`card rounded-2xl overflow-hidden cursor-pointer group ${viewMode==='list'?'flex':''}`}
+                >
+                  <div className={`${viewMode==='list'?'w-48 flex-shrink-0':'h-64'} overflow-hidden relative`}>
+                    <img src={s.image} alt={s.title} className="w-full h-full object-cover image-dim"/>
+                    <div className="absolute top-4 left-4 category-tag">{s.category}</div>
+                    <div className="absolute top-4 right-4 text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">#{('00'+s.id).slice(-2)}</div>
+                    <div className="absolute bottom-4 left-4 flex gap-2">
+                      <div className={`status-badge status-${s.status.toLowerCase()}`}>{s.status}</div>
+                      <div className={`status-badge priority-${s.priority.toLowerCase()}`}>{s.priority}</div>
+                    </div>
+                  </div>
+                  <div className={`p-7 relative ${viewMode==='list'?'flex-1':''}`}>
+                    <div className="flex items-start justify-between mb-3">
+                      <h2 className={`font-['Crimson_Text'] font-semibold leading-tight flex-1 pr-4 ${viewMode==='list'?'text-2xl':'text-xl'}`}>{s.title}</h2>
+                      <div className="meta-tag text-nowrap">{s.date}</div>
+                    </div>
+                    <p className="mt-3 text-gray-300 leading-relaxed text-sm" style={{minHeight:'4rem'}}>{s.summary}</p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {s.evidence.slice(0,3).map((evidence,idx)=>(<span key={idx} className="evidence-tag text-xs">{evidence}</span>))}
+                      {s.evidence.length>3&&(<span className="evidence-tag text-xs">+{s.evidence.length-3} more</span>)}
+                    </div>
+                    <div className="mt-6 flex items-center justify-between">
+                      <div className="text-xs text-gray-500 font-mono">{s.witnesses} witnesses</div>
+                      <div className="text-sm read-more font-medium">Analyze Case →</div>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </motion.section>
+            {filteredStories.length===0&&(<motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="text-center py-20"><div className="text-6xl mb-4">🔍</div><h3 className="text-xl text-gray-400 mb-2">No cases found</h3><p className="text-gray-600">Try adjusting your search or filters</p></motion.div>)}
+          </main>
+
+          <AnimatePresence>
+            {selected&&(<motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 z-50 flex items-center justify-center px-6 py-8" onClick={closeModal}>
+              <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="absolute inset-0 bg-black/90 backdrop-blur-md"/>
+              <motion.div initial={{scale:0.95,y:20,opacity:0}} animate={{scale:1,y:0,opacity:1}} exit={{scale:0.95,y:20,opacity:0}} transition={{type:"spring",damping:25,stiffness:300}} className="modal relative max-w-6xl w-full rounded-3xl overflow-hidden" onClick={(e)=>e.stopPropagation()}>
+                <div className="h-96 overflow-hidden relative">
+                  <img src={selected.image} alt={selected.title} className="w-full h-full object-cover filter sepia(0.3) brightness(0.6)"/>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"/>
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="category-tag">{selected.category}</div>
+                      <div className={`status-badge status-${selected.status.toLowerCase()}`}>{selected.status}</div>
+                      <div className={`status-badge priority-${selected.priority.toLowerCase()}`}>{selected.priority}</div>
+                    </div>
+                    <h2 className="text-5xl font-['Playfair_Display'] font-semibold text-amber-100 mb-2">{selected.title}</h2>
+                    <div className="flex items-center gap-6">
+                      <div className="text-lg text-amber-200/80">{selected.date}</div>
+                      <div className="text-amber-200/60">•</div>
+                      <div className="text-lg text-amber-200/80">{selected.witnesses} witnesses</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-10 modal-content">
+                  <div className="mb-8 p-6 bg-gray-900/50 rounded-xl border border-gray-800">
+                    <h4 className="font-['Crimson_Text'] font-semibold text-lg mb-3 text-amber-200">Case Evidence</h4>
+                    <div className="flex flex-wrap gap-3">
+                      {selected.evidence.map((item,idx)=>(<motion.span key={idx} initial={{opacity:0,scale:0.8}} animate={{opacity:1,scale:1}} transition={{delay:0.5+idx*0.1}} className="evidence-tag bg-amber-900/20 border-amber-700/30 text-amber-200">{item}</motion.span>))}
+                    </div>
+                  </div>
+                  <div className="prose prose-invert max-w-none">
+                    <div className="text-gray-200 leading-relaxed text-lg">
+                      <p className="dropcap">{isClient?(typedText||(typingRef.current.running?'▊':selected.content)):selected.content}</p>
+                    </div>
+                  </div>
+                  <div className="mt-12 flex items-center justify-between pt-8 border-t border-gray-800">
+                    <div className="text-sm text-gray-500 font-mono">CLASSIFIED • CASE #{('00'+selected.id).slice(-2)}</div>
+                    <div className="flex items-center gap-6">
+                      <motion.button whileHover={{scale:1.05,x:-2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const prev=STORIES[(curIdx-1+STORIES.length)%STORIES.length];setSelected(prev);setTypedText('');setTimeout(()=>startTyping(prev.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">← Previous Case</motion.button>
+                      <motion.button whileHover={{scale:1.05,x:2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const next=STORIES[(curIdx+1)%STORIES.length];setSelected(next);setTypedText('');setTimeout(()=>startTyping(next.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">Next Case →</motion.button>
+                      <motion.button whileHover={{scale:1.05}} whileTap={{scale:0.95}} onClick={closeModal} className="text-gray-400 hover:text-gray-200 transition font-medium px-6 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700">Close Dossier</motion.button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>)}
+          </AnimatePresence>
+
+          <AnimatePresence>
+            {notification&&(<motion.div initial={{opacity:0,x:100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}} className="notification"><div className="flex items-center gap-3"><div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"/><span className="text-sm">{notification.message}</span></div></motion.div>)}
+          </AnimatePresence>
+
+          <footer className="max-w-8xl mx-auto px-6 mt-20 pb-12 text-center relative z-10">
+            <div className="border-t border-gray-800 pt-12">
+              <p className="text-sm text-gray-500 mb-4 font-mono">© 2025 THE CRIME ARCHIVES • ULTIMATE PREMIUM EDITION</p>
+              <p className="text-xs text-gray-600 font-['Crimson_Text'] italic max-w-2xl mx-auto">"In the silence between heartbeats, truth whispers its secrets. We are listening."</p>
             </div>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {allTags.map((tag)=>(<button key={tag} onClick={()=>{const newTags=new Set(selectedTags);if(newTags.has(tag))newTags.delete(tag);else newTags.add(tag);setSelectedTags(newTags);}} className={`tag-filter px-3 py-1 rounded-full text-xs ${selectedTags.has(tag)?'active':''}`}>{tag}</button>))}
-            </div>
-          </div>
-        </header>
-
-        <main className="max-w-8xl mx-auto px-6 pb-32 relative z-10">
-          <motion.section className={`${viewMode==='grid'?'grid xl:grid-cols-3 md:grid-cols-2 gap-8':'flex flex-col gap-6'}`} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.8,delay:0.3}}>
-            {filteredStories.map((s,idx)=>(
-              <motion.article key={s.id} layout initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{delay:idx*0.1,type:'spring',stiffness:80,damping:12}} whileHover={{y:viewMode==='grid'?-8:-4}} onClick={()=>openStory(s)} className={`card rounded-2xl overflow-hidden cursor-pointer group ${viewMode==='list'?'flex':''}`}>
-                <div className={`${viewMode==='list'?'w-48 flex-shrink-0':'h-64'} overflow-hidden relative`}>
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover image-dim"/>
-                  <div className="absolute top-4 left-4 category-tag">{s.category}</div>
-                  <div className="absolute top-4 right-4 text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">#{('00'+s.id).slice(-2)}</div>
-                  <div className="absolute bottom-4 left-4 flex gap-2">
-                    <div className={`status-badge status-${s.status.toLowerCase()}`}>{s.status}</div>
-                    <div className={`status-badge priority-${s.priority.toLowerCase()}`}>{s.priority}</div>
-                  </div>
-                </div>
-                <div className={`p-7 relative ${viewMode==='list'?'flex-1':''}`}>
-                  <div className="flex items-start justify-between mb-3">
-                    <h2 className={`font-['Crimson_Text'] font-semibold leading-tight flex-1 pr-4 ${viewMode==='list'?'text-2xl':'text-xl'}`}>{s.title}</h2>
-                    <div className="meta-tag text-nowrap">{s.date}</div>
-                  </div>
-                  <p className="mt-3 text-gray-300 leading-relaxed text-sm" style={{minHeight:'4rem'}}>{s.summary}</p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {s.evidence.slice(0,3).map((evidence,idx)=>(<span key={idx} className="evidence-tag text-xs">{evidence}</span>))}
-                    {s.evidence.length>3&&(<span className="evidence-tag text-xs">+{s.evidence.length-3} more</span>)}
-                  </div>
-                  <div className="mt-6 flex items-center justify-between">
-                    <div className="text-xs text-gray-500 font-mono">{s.witnesses} witnesses</div>
-                    <div className="text-sm read-more font-medium">Analyze Case →</div>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </motion.section>
-          {filteredStories.length===0&&(<motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="text-center py-20"><div className="text-6xl mb-4">🔍</div><h3 className="text-xl text-gray-400 mb-2">No cases found</h3><p className="text-gray-600">Try adjusting your search or filters</p></motion.div>)}
-        </main>
-
-        <AnimatePresence>
-          {selected&&(<motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 z-50 flex items-center justify-center px-6 py-8" onClick={closeModal}>
-            <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="absolute inset-0 bg-black/90 backdrop-blur-md"/>
-            <motion.div initial={{scale:0.95,y:20,opacity:0}} animate={{scale:1,y:0,opacity:1}} exit={{scale:0.95,y:20,opacity:0}} transition={{type:"spring",damping:25,stiffness:300}} className="modal relative max-w-6xl w-full rounded-3xl overflow-hidden" onClick={(e)=>e.stopPropagation()}>
-              <div className="h-96 overflow-hidden relative">
-                <img src={selected.image} alt={selected.title} className="w-full h-full object-cover filter sepia(0.3) brightness(0.6)"/>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"/>
-                <div className="absolute bottom-8 left-8 right-8">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="category-tag">{selected.category}</div>
-                    <div className={`status-badge status-${selected.status.toLowerCase()}`}>{selected.status}</div>
-                    <div className={`status-badge priority-${selected.priority.toLowerCase()}`}>{selected.priority}</div>
-                  </div>
-                  <h2 className="text-5xl font-['Playfair_Display'] font-semibold text-amber-100 mb-2">{selected.title}</h2>
-                  <div className="flex items-center gap-6">
-                    <div className="text-lg text-amber-200/80">{selected.date}</div>
-                    <div className="text-amber-200/60">•</div>
-                    <div className="text-lg text-amber-200/80">{selected.witnesses} witnesses</div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-10 modal-content">
-                <div className="mb-8 p-6 bg-gray-900/50 rounded-xl border border-gray-800">
-                  <h4 className="font-['Crimson_Text'] font-semibold text-lg mb-3 text-amber-200">Case Evidence</h4>
-                  <div className="flex flex-wrap gap-3">
-                    {selected.evidence.map((item,idx)=>(<motion.span key={idx} initial={{opacity:0,scale:0.8}} animate={{opacity:1,scale:1}} transition={{delay:0.5+idx*0.1}} className="evidence-tag bg-amber-900/20 border-amber-700/30 text-amber-200">{item}</motion.span>))}
-                  </div>
-                </div>
-                <div className="prose prose-invert max-w-none">
-                  <div className="text-gray-200 leading-relaxed text-lg">
-                    <p className="dropcap">{isClient?(typedText||(typingRef.current.running?'▊':selected.content)):selected.content}</p>
-                  </div>
-                </div>
-                <div className="mt-12 flex items-center justify-between pt-8 border-t border-gray-800">
-                  <div className="text-sm text-gray-500 font-mono">CLASSIFIED • CASE #{('00'+selected.id).slice(-2)}</div>
-                  <div className="flex items-center gap-6">
-                    <motion.button whileHover={{scale:1.05,x:-2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const prev=STORIES[(curIdx-1+STORIES.length)%STORIES.length];setSelected(prev);setTypedText('');setTimeout(()=>startTyping(prev.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">← Previous Case</motion.button>
-                    <motion.button whileHover={{scale:1.05,x:2}} whileTap={{scale:0.95}} onClick={()=>{const curIdx=STORIES.findIndex((x)=>x.id===selected.id);const next=STORIES[(curIdx+1)%STORIES.length];setSelected(next);setTypedText('');setTimeout(()=>startTyping(next.content),140);}} className="text-amber-400 hover:text-amber-300 transition font-medium flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-900/20 hover:bg-amber-900/30">Next Case →</motion.button>
-                    <motion.button whileHover={{scale:1.05}} whileTap={{scale:0.95}} onClick={closeModal} className="text-gray-400 hover:text-gray-200 transition font-medium px-6 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700">Close Dossier</motion.button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>)}
-        </AnimatePresence>
-
-        <AnimatePresence>
-          {notification&&(<motion.div initial={{opacity:0,x:100}} animate={{opacity:1,x:0}} exit={{opacity:0,x:100}} className="notification"><div className="flex items-center gap-3"><div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"/><span className="text-sm">{notification.message}</span></div></motion.div>)}
-        </AnimatePresence>
-
-        <footer className="max-w-8xl mx-auto px-6 mt-20 pb-12 text-center relative z-10">
-          <div className="border-t border-gray-800 pt-12">
-            <p className="text-sm text-gray-500 mb-4 font-mono">© 2025 THE CRIME ARCHIVES • ULTIMATE PREMIUM EDITION</p>
-            <p className="text-xs text-gray-600 font-['Crimson_Text'] italic max-w-2xl mx-auto">"In the silence between heartbeats, truth whispers its secrets. We are listening."</p>
-          </div>
-        </footer>
-      </div>
+          </footer>
+        </div>
+      )}
     </>
   )
 }
