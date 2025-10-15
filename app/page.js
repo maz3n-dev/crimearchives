@@ -114,15 +114,43 @@ export default function Page() {
   const [notification, setNotification] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showIntro, setShowIntro] = useState(true)
+  const [isNavVisible, setIsNavVisible] = useState(true)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
 
   const typingRef = useRef({ running: false, timeoutIds: [] })
   const audioRef = useRef({ ctx: null, masterGain: null })
+
+  // Minimum swipe distance to trigger nav hide/show
+  const minSwipeDistance = 50
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientY)
+  }
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientY)
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isDownSwipe = distance > minSwipeDistance
+    const isUpSwipe = distance < -minSwipeDistance
+
+    if (isDownSwipe && isNavVisible) {
+      setIsNavVisible(false)
+    } else if (isUpSwipe && !isNavVisible) {
+      setIsNavVisible(true)
+    }
+  }
 
   useEffect(() => {
     setIsClient(true)
     const timer = setTimeout(() => {
       setIsLoading(false)
-      setTimeout(() => setShowIntro(false), 4000) // Show intro for 4 seconds after loading
+      setTimeout(() => setShowIntro(false), 4000)
     }, 1500)
     return () => clearTimeout(timer)
   }, [])
@@ -226,94 +254,93 @@ export default function Page() {
   }, [selected])
 
   const IntroAnimation = () => (
-  <motion.div 
-    className="fixed inset-0 z-40 flex items-center justify-center bg-black"
-    initial={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 1.5 }}
-  >
-    <div className="text-center">
-      {/* REMOVED THE LOGO SECTION COMPLETELY */}
-      
-      <motion.h1
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}  // Reduced delay from 1 to 0.5
-        className="text-6xl font-bold mb-4 font-['Playfair_Display'] text-amber-400"
-      >
-        CRIME ARCHIVES
-      </motion.h1>
-      
-      <motion.div
-        initial={{ width: 0 }}
-        animate={{ width: 300 }}
-        transition={{ delay: 1.3, duration: 1.5 }}  // Reduced delay from 1.8 to 1.3
-        className="h-1 bg-gradient-to-r from-transparent via-amber-600 to-transparent mx-auto mb-6 rounded-full"
-      />
-      
-      <motion.p
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 1.7, duration: 1 }}  // Reduced delay from 2.2 to 1.7
-        className="text-xl text-amber-200 font-light tracking-widest mb-2"
-      >
-        CLASSIFIED DOSSIERS
-      </motion.p>
-      
-      <motion.p
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 2.0, duration: 1 }}  // Reduced delay from 2.5 to 2.0
-        className="text-lg text-amber-300/70 font-mono"
-      >
-        ULTIMATE EDITION
-      </motion.p>
-
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 2.7, type: "spring" }}  // Reduced delay from 3.2 to 2.7
-        className="mt-12"
-      >
-        <div className="flex items-center justify-center space-x-2">
-          <motion.div
-            animate={{ opacity: [1, 0.3, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-2 h-2 bg-amber-400 rounded-full"
-          />
-          <motion.div
-            animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
-            className="w-2 h-2 bg-amber-400 rounded-full"
-          />
-          <motion.div
-            animate={{ opacity: [1, 0.3, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
-            className="w-2 h-2 bg-amber-400 rounded-full"
-          />
-        </div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 3.0 }}  // Reduced delay from 3.5 to 3.0
-          className="text-amber-500 text-sm mt-2 font-mono"
+    <motion.div 
+      className="fixed inset-0 z-40 flex items-center justify-center bg-black"
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <div className="text-center">
+        <motion.h1
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="text-6xl font-bold mb-4 font-['Playfair_Display'] text-amber-400"
         >
-          ACCESSING SECURED FILES...
+          CRIME ARCHIVES
+        </motion.h1>
+        
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: 300 }}
+          transition={{ delay: 1.3, duration: 1.5 }}
+          className="h-1 bg-gradient-to-r from-transparent via-amber-600 to-transparent mx-auto mb-6 rounded-full"
+        />
+        
+        <motion.p
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.7, duration: 1 }}
+          className="text-xl text-amber-200 font-light tracking-widest mb-2"
+        >
+          CLASSIFIED DOSSIERS
         </motion.p>
-      </motion.div>
-    </div>
-  </motion.div>
-)
+        
+        <motion.p
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 2.0, duration: 1 }}
+          className="text-lg text-amber-300/70 font-mono"
+        >
+          ULTIMATE EDITION
+        </motion.p>
+
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 2.7, type: "spring" }}
+          className="mt-12"
+        >
+          <div className="flex items-center justify-center space-x-2">
+            <motion.div
+              animate={{ opacity: [1, 0.3, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-2 h-2 bg-amber-400 rounded-full"
+            />
+            <motion.div
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
+              className="w-2 h-2 bg-amber-400 rounded-full"
+            />
+            <motion.div
+              animate={{ opacity: [1, 0.3, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
+              className="w-2 h-2 bg-amber-400 rounded-full"
+            />
+          </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3.0 }}
+            className="text-amber-500 text-sm mt-2 font-mono"
+          >
+            ACCESSING SECURED FILES...
+          </motion.p>
+        </motion.div>
+      </div>
+    </motion.div>
+  )
 
   const styles = `
     :root{--bg-0:#050505;--bg-1:#0a0a0a;--bg-2:#111111;--paper:rgba(255,255,255,0.015);--accent:#8b4513;--accent-glow:rgba(139,69,19,0.15);--accent-secondary:#2f4f4f;--muted:#8a8a8a;--text-primary:#e8e8e8;--text-secondary:#b0b0b0;--border:rgba(255,255,255,0.03);--border-glow:rgba(139,69,19,0.1);--shadow-premium:0 25px 50px -12px rgba(0,0,0,0.5);--shadow-accent:0 0 30px rgba(139,69,19,0.2);}
-    *{box-sizing:border-box;}
-    html,body,#root{height:100%;scroll-behavior:smooth;}
-    .crime-body{min-height:200vh;background:radial-gradient(ellipse at 15% 10%,rgba(30,15,5,0.15) 0%,transparent 60%),radial-gradient(ellipse at 85% 90%,rgba(20,30,20,0.1) 0%,transparent 60%),linear-gradient(180deg,var(--bg-0) 0%,var(--bg-1) 40%,var(--bg-2) 100%);color:var(--text-primary);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html,body,#root{height:100%;scroll-behavior:smooth;overflow-x:hidden;}
+    .crime-body{min-height:100vh;background:radial-gradient(ellipse at 15% 10%,rgba(30,15,5,0.15) 0%,transparent 60%),radial-gradient(ellipse at 85% 90%,rgba(20,30,20,0.1) 0%,transparent 60%),linear-gradient(180deg,var(--bg-0) 0%,var(--bg-1) 40%,var(--bg-2) 100%);color:var(--text-primary);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
     .crime-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 30%,rgba(139,69,19,0.03) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(47,79,79,0.03) 0%,transparent 50%);pointer-events:none;z-index:0;}
     .grain{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");mix-blend-mode:overlay;pointer-events:none;}
     .vignette{position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,0.9) 100%);pointer-events:none;z-index:1;}
-    .sticky-head{position:sticky;top:0;backdrop-filter:blur(20px) saturate(180%);background:linear-gradient(180deg,rgba(5,5,5,0.95) 0%,rgba(5,5,5,0.85) 100%);border-bottom:1px solid var(--border);z-index:50;box-shadow:0 1px 30px rgba(0,0,0,0.4);}
+    .sticky-head{position:sticky;top:0;backdrop-filter:blur(20px) saturate(180%);background:linear-gradient(180deg,rgba(5,5,5,0.95) 0%,rgba(5,5,5,0.85) 100%);border-bottom:1px solid var(--border);z-index:50;box-shadow:0 1px 30px rgba(0,0,0,0.4);transition:transform 0.3s ease;}
+    .sticky-head.hidden{transform:translateY(-100%);}
     .dossier-title{font-family:'Playfair Display',serif;font-weight:600;letter-spacing:0.12em;color:var(--accent);text-shadow:0 2px 15px var(--accent-glow);position:relative;}
     .dossier-title::after{content:'';position:absolute;bottom:-6px;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--accent) 50%,transparent 100%);opacity:0.6;}
     .card{background:linear-gradient(145deg,rgba(255,255,255,0.02) 0%,rgba(255,255,255,0.005) 100%);border:1px solid var(--border);backdrop-filter:blur(10px);transition:all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);position:relative;overflow:hidden;}
@@ -348,7 +375,22 @@ export default function Page() {
     .evidence-tag{font-size:0.7rem;background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);}
     .loading-screen{position:fixed;inset:0;background:var(--bg-0);z-index:10000;display:flex;align-items:center;justify-content:center;}
     .notification{position:fixed;top:100px;right:30px;padding:16px 20px;background:rgba(10,10,10,0.95);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(20px);z-index:1000;box-shadow:var(--shadow-premium);border-left:4px solid var(--accent);}
-    @media (max-width:768px){.dropcap::first-letter{font-size:3rem;margin-right:0.6rem;}.card:hover{transform:translateY(-4px);}}
+    
+    /* Mobile-specific fixes */
+    @media (max-width: 768px) {
+      .dropcap::first-letter{font-size:3rem;margin-right:0.6rem;}
+      .card:hover{transform:translateY(-4px);}
+      body { overflow-x: hidden; }
+      .crime-body { min-height: 100vh; height: 100%; }
+      html, body, #root { height: 100%; overflow-x: hidden; }
+      .sticky-head { transition: transform 0.3s ease; }
+      .sticky-head.hidden { transform: translateY(-100%); }
+      .search-box { min-width: 100%; }
+      .modal { margin: 0; border-radius: 0; max-height: 100vh; width: 100%; }
+      .modal-content { max-height: calc(100vh - 300px); }
+      .dossier-title { font-size: 1.5rem; }
+      .filter-btn, .tag-filter { font-size: 0.7rem; padding: 8px 12px; }
+    }
   `
 
   const LoadingScreen = () => (
@@ -372,11 +414,16 @@ export default function Page() {
       </AnimatePresence>
 
       {!showIntro && (
-        <div className="crime-body relative min-h-screen">
+        <div 
+          className="crime-body relative min-h-screen"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div className="grain fixed inset-0 pointer-events-none z-2"/>
           <div className="vignette fixed inset-0 pointer-events-none z-1"/>
           
-          <header className="sticky-head">
+          <header className={`sticky-head ${isNavVisible ? '' : 'hidden'}`}>
             <div className="max-w-8xl mx-auto px-6 py-4">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-5">
@@ -539,4 +586,3 @@ export default function Page() {
     </>
   )
 }
- 
